@@ -6,17 +6,19 @@
   <title>Олеся Джафарова — Портфолио дашбордов</title>
   <style>
     :root {
-      --bg: #0b1020;
-      --bg-soft: #121932;
-      --card: rgba(255, 255, 255, 0.06);
-      --card-border: rgba(255, 255, 255, 0.12);
-      --text: #f3f6ff;
-      --muted: #b8c0d9;
-      --accent: #7c9cff;
-      --accent-2: #56e0c5;
-      --shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
-      --radius: 24px;
-      --max: 1140px;
+      --bg: #f3f1ec;
+      --bg-soft: #ebe7df;
+      --surface: #f8f6f2;
+      --card: #f7f4ee;
+      --card-strong: #efebe3;
+      --card-border: rgba(34, 34, 34, 0.08);
+      --text: #1f1f1b;
+      --muted: #6f6a61;
+      --accent: #2f2f2b;
+      --accent-soft: #d9d2c6;
+      --shadow: 0 18px 40px rgba(30, 24, 16, 0.06);
+      --radius: 20px;
+      --max: 1180px;
     }
 
     * { box-sizing: border-box; }
@@ -27,11 +29,9 @@
       margin: 0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(124, 156, 255, 0.18), transparent 25%),
-        radial-gradient(circle at top right, rgba(86, 224, 197, 0.12), transparent 20%),
-        linear-gradient(180deg, #0b1020 0%, #0c1226 100%);
-      line-height: 1.6;
+      background: linear-gradient(180deg, #f4f1eb 0%, #efeae2 100%);
+      line-height: 1.65;
+      letter-spacing: -0.01em;
     }
 
     a { color: inherit; text-decoration: none; }
@@ -45,9 +45,9 @@
       position: sticky;
       top: 0;
       z-index: 20;
-      backdrop-filter: blur(18px);
-      background: rgba(11, 16, 32, 0.7);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(14px);
+      background: rgba(244, 241, 235, 0.82);
+      border-bottom: 1px solid rgba(34, 34, 34, 0.07);
     }
 
     .nav-inner {
@@ -59,9 +59,10 @@
     }
 
     .brand {
-      font-weight: 800;
-      letter-spacing: 0.2px;
-      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      font-size: 1rem;
+      color: var(--text);
     }
 
     .nav-links {
@@ -80,7 +81,7 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 28px;
       align-items: stretch;
     }
@@ -96,35 +97,50 @@
     }
 
     .hero-card {
-      padding: 40px;
+      padding: 48px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.55), rgba(255,255,255,0.25));
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 8px 12px;
+      padding: 7px 12px;
       border-radius: 999px;
-      background: rgba(124, 156, 255, 0.12);
-      color: #dce5ff;
-      font-size: 0.9rem;
-      margin-bottom: 18px;
+      background: var(--accent-soft);
+      color: var(--text);
+      font-size: 0.88rem;
+      margin-bottom: 22px;
     }
 
     h1, h2, h3, p { margin-top: 0; }
 
     h1 {
-      font-size: clamp(2.2rem, 4vw, 4.4rem);
-      line-height: 1.05;
-      margin-bottom: 18px;
-      max-width: 10ch;
+      font-size: clamp(2.7rem, 5vw, 5.4rem);
+      line-height: 0.98;
+      margin-bottom: 22px;
+      max-width: none;
+      letter-spacing: -0.05em;
+      text-wrap: balance;
+    }
+
+    h2 {
+      letter-spacing: -0.03em;
+      font-size: clamp(1.7rem, 2.4vw, 2.4rem);
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      letter-spacing: -0.03em;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
     }
 
     .lead {
       color: var(--muted);
-      font-size: 1.08rem;
-      max-width: 60ch;
-      margin-bottom: 28px;
+      font-size: 1.06rem;
+      max-width: 58ch;
+      margin-bottom: 32px;
     }
 
     .hero-actions {
@@ -140,22 +156,22 @@
       justify-content: center;
       gap: 10px;
       padding: 14px 18px;
-      border-radius: 14px;
-      font-weight: 700;
-      transition: transform 0.18s ease, opacity 0.18s ease, border-color 0.18s ease;
+      border-radius: 999px;
+      font-weight: 600;
+      transition: transform 0.18s ease, opacity 0.18s ease, border-color 0.18s ease, background 0.18s ease;
     }
 
-    .btn:hover { transform: translateY(-2px); }
+    .btn:hover { transform: translateY(-1px); }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--accent), #9a7cff);
-      color: white;
+      background: var(--accent);
+      color: #f7f4ee;
     }
 
     .btn-secondary {
-      border: 1px solid rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(34, 34, 34, 0.12);
       color: var(--text);
-      background: rgba(255, 255, 255, 0.04);
+      background: transparent;
     }
 
     .metrics {
@@ -165,16 +181,17 @@
     }
 
     .metric {
-      padding: 16px;
+      padding: 18px;
       border-radius: 18px;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: var(--card-strong);
+      border: 1px solid rgba(34, 34, 34, 0.06);
     }
 
     .metric strong {
       display: block;
-      font-size: 1.45rem;
+      font-size: 1.4rem;
       margin-bottom: 4px;
+      letter-spacing: -0.03em;
     }
 
     .metric span {
@@ -183,20 +200,19 @@
     }
 
     .panel {
-      padding: 24px;
+      padding: 28px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       gap: 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.42), rgba(255,255,255,0.18));
     }
 
     .mini-chart {
       height: 180px;
       border-radius: 20px;
-      background:
-        linear-gradient(180deg, rgba(124, 156, 255, 0.18), rgba(124, 156, 255, 0.04)),
-        rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(180deg, #ebe4d8, #e2dbce);
+      border: 1px solid rgba(34,34,34,0.06);
       padding: 18px;
       position: relative;
       overflow: hidden;
@@ -214,12 +230,12 @@
     .bar {
       flex: 1;
       border-radius: 12px 12px 4px 4px;
-      background: linear-gradient(180deg, var(--accent-2), var(--accent));
-      opacity: 0.95;
+      background: linear-gradient(180deg, #8b857b, #555149);
+      opacity: 0.9;
     }
 
     .section {
-      padding: 28px 0;
+      padding: 34px 0;
     }
 
     .section-head {
@@ -247,21 +263,33 @@
     }
 
     .project-cover {
-      height: 180px;
-      background:
-        radial-gradient(circle at 20% 20%, rgba(124, 156, 255, 0.45), transparent 35%),
-        radial-gradient(circle at 80% 20%, rgba(86, 224, 197, 0.22), transparent 30%),
-        linear-gradient(135deg, #1a2344, #0f1731);
+      height: 210px;
+      background: linear-gradient(180deg, #ece7de, #e4ddd1);
       position: relative;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(34,34,34,0.06);
+      overflow: hidden;
     }
 
     .screen {
       position: absolute;
-      inset: 22px 22px 18px 22px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
+      inset: 18px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.52);
+      border: 1px solid rgba(34,34,34,0.06);
+      overflow: hidden;
+    }
+
+    .screen img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      background: #fff;
+    }
+
+    .screen-placeholder {
+      position: absolute;
+      inset: 0;
       padding: 14px;
     }
 
@@ -273,7 +301,7 @@
     }
 
     .pill, .line, .tile {
-      background: rgba(255,255,255,0.1);
+      background: rgba(60, 56, 50, 0.08);
       border-radius: 10px;
     }
 
@@ -295,10 +323,10 @@
     .tag {
       padding: 7px 10px;
       border-radius: 999px;
-      font-size: 0.84rem;
-      color: #dde5ff;
-      background: rgba(124, 156, 255, 0.12);
-      border: 1px solid rgba(124, 156, 255, 0.18);
+      font-size: 0.82rem;
+      color: var(--text);
+      background: #ece6db;
+      border: 1px solid rgba(34,34,34,0.06);
     }
 
     .project-links {
@@ -315,7 +343,7 @@
 
     .project-links a:hover {
       color: var(--text);
-      border-color: rgba(255,255,255,0.35);
+      border-color: rgba(34,34,34,0.25);
     }
 
     .about-grid,
@@ -337,13 +365,14 @@
     .skill-list span {
       padding: 10px 12px;
       border-radius: 12px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      color: var(--muted);
+      background: #ece6db;
+      border: 1px solid rgba(34,34,34,0.06);
+      color: var(--text);
     }
 
     .contact-card {
       padding: 24px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.46), rgba(255,255,255,0.22));
     }
 
     .contact-links {
@@ -355,15 +384,15 @@
     .contact-links a {
       padding: 14px 16px;
       border-radius: 14px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      color: var(--muted);
+      background: #f2ede5;
+      border: 1px solid rgba(34,34,34,0.06);
+      color: var(--text);
     }
 
-    .contact-links a:hover { color: var(--text); }
+    .contact-links a:hover { opacity: 0.85; }
 
     footer {
-      padding: 30px 0 48px;
+      padding: 34px 0 48px;
       color: var(--muted);
       text-align: center;
       font-size: 0.92rem;
@@ -384,7 +413,11 @@
       .metrics { grid-template-columns: 1fr; }
       .nav-inner { align-items: flex-start; }
       .nav-links { font-size: 0.9rem; }
-      h1 { max-width: none; }
+      h1 {
+        max-width: none;
+        font-size: clamp(2.4rem, 11vw, 3.4rem);
+        line-height: 1.02;
+      }
     }
   </style>
 </head>
@@ -462,7 +495,7 @@
         <div class="section-head">
           <div>
             <h2>Избранные проекты</h2>
-            <p>Ниже собраны реальные проекты из портфолио: Tableau, Superset и Visiology. При желании можно добавить скриншоты вместо декоративных превью.</p>
+            <p>Ниже собраны реальные проекты из портфолио. Вместо заглушек можно использовать скриншоты из папки images.</p>
           </div>
         </div>
 
@@ -470,18 +503,7 @@
           <article class="project-card">
             <div class="project-cover">
               <div class="screen">
-                <div class="screen-top">
-                  <div class="pill"></div>
-                  <div class="pill"></div>
-                  <div class="pill"></div>
-                </div>
-                <div class="line" style="width: 68%;"></div>
-                <div class="line" style="width: 42%;"></div>
-                <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; margin-top: 12px;">
-                  <div class="tile"></div>
-                  <div class="tile"></div>
-                  <div class="tile"></div>
-                </div>
+                <img src="images/real-estate-transfer-dynamics.png" alt="Скриншот дашборда Динамика передачи объектов недвижимости">
               </div>
             </div>
             <div class="project-body">
@@ -496,6 +518,58 @@
               </div>
               <p style="color: var(--muted);">
                 Использовался для управленческого контроля сроков и анализа средних показателей просрочки по этапам строительства.
+              </p>
+              <div class="project-links">
+                <a href="https://github.com/sheolesya" target="_blank" rel="noreferrer">GitHub</a>
+                <a href="#contact">Запросить детали</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-cover">
+              <div class="screen">
+                <img src="images/benchmark-prices.png" alt="Скриншот дашборда Бенчмаркинг закупочных цен">
+              </div>
+            </div>
+            <div class="project-body">
+              <h3>Бенчмаркинг закупочных цен</h3>
+              <p>
+                Дашборд для оценки показателей бенчмарка по регионам, группам, товарным позициям и периодам с детализацией цен и отклонений от среднерыночных значений.
+              </p>
+              <div class="tags">
+                <span class="tag">Superset</span>
+                <span class="tag">ClickHouse</span>
+                <span class="tag">Benchmarking</span>
+              </div>
+              <p style="color: var(--muted);">
+                Объединил ключевые метрики, тренды и анализ выгодных и невыгодных закупок в одном управленческом отчёте.
+              </p>
+              <div class="project-links">
+                <a href="https://github.com/sheolesya" target="_blank" rel="noreferrer">GitHub</a>
+                <a href="#contact">Запросить детали</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-cover">
+              <div class="screen">
+                <img src="images/bim-time-tracking.png" alt="Скриншот отчёта Табель часов BIM-отдела НЗС">
+              </div>
+            </div>
+            <div class="project-body">
+              <h3>Табель часов BIM-отдела НЗС</h3>
+              <p>
+                Отчёт для отслеживания трудосписаний по проектам и прозрачного контроля загрузки BIM-команды.
+              </p>
+              <div class="tags">
+                <span class="tag">Tableau</span>
+                <span class="tag">Time Tracking</span>
+                <span class="tag">Operations</span>
+              </div>
+              <p style="color: var(--muted);">
+                Помог системно контролировать трудозатраты по проектам и упростил анализ фактических списаний времени.
               </p>
               <div class="project-links">
                 <a href="https://github.com/sheolesya" target="_blank" rel="noreferrer">GitHub</a>
@@ -540,12 +614,21 @@
         <div class="section-head">
           <div>
             <h2>Другие проекты</h2>
-            <p>Дополнительные кейсы из портфолио, которые можно развернуть в отдельные карточки или второй экран сайта.</p>
+            <p>Дополнительные кейсы из портфолио, которые можно развернуть в отдельные карточки или на второй экран сайта.</p>
           </div>
         </div>
         <div class="projects">
           <article class="project-card">
-            <div class="project-cover"><div class="screen"><div class="screen-top"><div class="pill"></div><div class="pill"></div><div class="pill"></div></div><div class="line" style="width:82%;"></div><div class="line" style="width:55%;"></div><div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top: 12px;"><div class="tile"></div><div class="tile"></div></div></div></div>
+            <div class="project-cover">
+              <div class="screen">
+                <div class="screen-placeholder">
+                  <div class="screen-top"><div class="pill"></div><div class="pill"></div><div class="pill"></div></div>
+                  <div class="line" style="width:82%;"></div>
+                  <div class="line" style="width:55%;"></div>
+                  <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top: 12px;"><div class="tile"></div><div class="tile"></div></div>
+                </div>
+              </div>
+            </div>
             <div class="project-body">
               <h3>Занятость ТН</h3>
               <p>Календарь занятости сотрудников технадзора, контроль присутствия на площадках и анализ KPI для оперативного выявления отклонений.</p>
@@ -555,7 +638,16 @@
           </article>
 
           <article class="project-card">
-            <div class="project-cover"><div class="screen"><div class="screen-top"><div class="pill"></div><div class="pill"></div><div class="pill"></div></div><div class="line" style="width:74%;"></div><div class="line" style="width:47%;"></div><div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; margin-top: 12px;"><div class="tile"></div><div class="tile"></div><div class="tile"></div></div></div></div>
+            <div class="project-cover">
+              <div class="screen">
+                <div class="screen-placeholder">
+                  <div class="screen-top"><div class="pill"></div><div class="pill"></div><div class="pill"></div></div>
+                  <div class="line" style="width:74%;"></div>
+                  <div class="line" style="width:47%;"></div>
+                  <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; margin-top: 12px;"><div class="tile"></div><div class="tile"></div><div class="tile"></div></div>
+                </div>
+              </div>
+            </div>
             <div class="project-body">
               <h3>Стройконтроль</h3>
               <p>Мониторинг критических и значительных дефектов, просрочек, дисциплины сотрудников и динамики устранения дефектов по проектам.</p>
@@ -565,7 +657,16 @@
           </article>
 
           <article class="project-card">
-            <div class="project-cover"><div class="screen"><div class="screen-top"><div class="pill"></div><div class="pill"></div><div class="pill"></div></div><div class="line" style="width:70%;"></div><div class="line" style="width:43%;"></div><div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top: 12px;"><div class="tile"></div><div class="tile"></div></div></div></div>
+            <div class="project-cover">
+              <div class="screen">
+                <div class="screen-placeholder">
+                  <div class="screen-top"><div class="pill"></div><div class="pill"></div><div class="pill"></div></div>
+                  <div class="line" style="width:70%;"></div>
+                  <div class="line" style="width:43%;"></div>
+                  <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top: 12px;"><div class="tile"></div><div class="tile"></div></div>
+                </div>
+              </div>
+            </div>
             <div class="project-body">
               <h3>Дебиторская задолженность и карты</h3>
               <p>Отчёты по динамике ДЗ в разрезе договоров, статусов и периодов, а также проекты с клиентскими и интерактивными картами.</p>
@@ -606,7 +707,7 @@
   </main>
 
   <footer>
-    Сделано как шаблон портфолио для дашбордов · Обнови тексты под себя и публикуй бесплатно
+    Портфолио BI-дашбордов · минималистичная версия для откликов и резюме
   </footer>
 </body>
 </html>
