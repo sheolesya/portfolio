@@ -1,45 +1,65 @@
-<title>Олеся Джафарова — Портфолио дашбордов</title>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Олеся Джафарова — Портфолио дашбордов</title>
   <style>
     :root {
-      --bg: #f3f1ec;
-      --bg-soft: #ebe7df;
-      --surface: #f8f6f2;
-      --card: #f7f4ee;
-      --card-strong: #efebe3;
-      --card-border: rgba(34, 34, 34, 0.08);
-      --text: #1f1f1b;
-      --muted: #6f6a61;
-      --accent: #2f2f2b;
-      --accent-soft: #d9d2c6;
-      --shadow: 0 18px 40px rgba(30, 24, 16, 0.06);
+      --bg: #f6f7f9;
+      --bg-soft: #eef1f5;
+      --surface: #ffffff;
+      --card: #ffffff;
+      --card-strong: #f3f5f7;
+      --card-border: rgba(17, 24, 39, 0.08);
+
+      --text: #16181d;
+      --muted: #667085;
+
+      --accent: #6366f1;
+      --accent-2: #4f8cff;
+      --accent-soft: rgba(99, 102, 241, 0.12);
+
+      --shadow: 0 18px 40px rgba(15, 23, 42, 0.05);
       --radius: 20px;
       --max: 1180px;
     }
 
     * { box-sizing: border-box; }
-@@ -27,11 +29,9 @@
+
+    html { scroll-behavior: smooth; }
+
+    body {
       margin: 0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
-      background: linear-gradient(180deg, #f4f1eb 0%, #efeae2 100%);
+      background: linear-gradient(180deg, #f7f8fa 0%, #f1f3f6 100%);
       line-height: 1.65;
       letter-spacing: -0.01em;
-
-
     }
 
     a { color: inherit; text-decoration: none; }
-@@ -45,9 +45,9 @@
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .nav {
       position: sticky;
       top: 0;
       z-index: 20;
       backdrop-filter: blur(14px);
-      background: rgba(244, 241, 235, 0.82);
-      border-bottom: 1px solid rgba(34, 34, 34, 0.07);
+      background: rgba(255, 255, 255, 0.85);
+      border-bottom: 1px solid rgba(17, 24, 39, 0.06);
     }
 
     .nav-inner {
-@@ -59,9 +59,10 @@
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 0;
     }
 
     .brand {
@@ -50,7 +70,22 @@
     }
 
     .nav-links {
-@@ -80,7 +81,7 @@
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      transition: color 0.18s ease;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .hero {
+      padding: 72px 0 48px;
+    }
 
     .hero-grid {
       display: grid;
@@ -58,12 +93,20 @@
       gap: 28px;
       align-items: stretch;
     }
-@@ -96,35 +97,50 @@
+
+    .hero-card,
+    .panel,
+    .project-card,
+    .contact-card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
     }
 
     .hero-card {
       padding: 48px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.55), rgba(255,255,255,0.25));
+      background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.94));
     }
 
     .eyebrow {
@@ -73,9 +116,10 @@
       padding: 7px 12px;
       border-radius: 999px;
       background: var(--accent-soft);
-      color: var(--text);
+      color: var(--accent);
       font-size: 0.88rem;
       margin-bottom: 22px;
+      border: 1px solid rgba(99, 102, 241, 0.14);
     }
 
     h1, h2, h3, p { margin-top: 0; }
@@ -109,37 +153,54 @@
     }
 
     .hero-actions {
-@@ -140,22 +156,22 @@
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
       justify-content: center;
       gap: 10px;
       padding: 14px 18px;
       border-radius: 999px;
       font-weight: 600;
-      transition: transform 0.18s ease, opacity 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+      transition: transform 0.18s ease, opacity 0.18s ease, border-color 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
     }
 
-    .btn:hover { transform: translateY(-1px); }
+    .btn:hover {
+      transform: translateY(-1px);
+    }
 
     .btn-primary {
-      background: var(--accent);
-      color: #f7f4ee;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #ffffff;
+      box-shadow: 0 10px 24px rgba(79, 140, 255, 0.18);
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 12px 28px rgba(79, 140, 255, 0.24);
     }
 
     .btn-secondary {
-      border: 1px solid rgba(34, 34, 34, 0.12);
+      border: 1px solid rgba(17, 24, 39, 0.12);
       color: var(--text);
-      background: transparent;
+      background: #ffffff;
     }
 
     .metrics {
-@@ -165,16 +181,17 @@
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
     }
 
     .metric {
       padding: 18px;
       border-radius: 18px;
       background: var(--card-strong);
-      border: 1px solid rgba(34, 34, 34, 0.06);
+      border: 1px solid rgba(17, 24, 39, 0.06);
     }
 
     .metric strong {
@@ -150,7 +211,8 @@
     }
 
     .metric span {
-@@ -183,20 +200,19 @@
+      color: var(--muted);
+      font-size: 0.92rem;
     }
 
     .panel {
@@ -159,25 +221,33 @@
       flex-direction: column;
       justify-content: space-between;
       gap: 18px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.42), rgba(255,255,255,0.18));
+      background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.94));
     }
 
     .mini-chart {
       height: 180px;
       border-radius: 20px;
-      background: linear-gradient(180deg, #ebe4d8, #e2dbce);
-      border: 1px solid rgba(34,34,34,0.06);
-
-
+      background: linear-gradient(180deg, #f5f7fb, #eef2f7);
+      border: 1px solid rgba(79, 140, 255, 0.10);
       padding: 18px;
       position: relative;
       overflow: hidden;
-@@ -214,12 +230,12 @@
+    }
+
+    .bars {
+      position: absolute;
+      inset: auto 18px 18px 18px;
+      height: 110px;
+      display: flex;
+      align-items: end;
+      gap: 10px;
+    }
+
     .bar {
       flex: 1;
       border-radius: 12px 12px 4px 4px;
-      background: linear-gradient(180deg, #8b857b, #555149);
-      opacity: 0.9;
+      background: linear-gradient(180deg, #8b7dff, #4f8cff);
+      opacity: 0.92;
     }
 
     .section {
@@ -185,17 +255,41 @@
     }
 
     .section-head {
-@@ -247,21 +263,33 @@
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      max-width: 62ch;
+      margin-bottom: 0;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .project-card {
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 22px 50px rgba(15, 23, 42, 0.08);
+      border-color: rgba(99, 102, 241, 0.12);
     }
 
     .project-cover {
       height: 210px;
-      background: linear-gradient(180deg, #ece7de, #e4ddd1);
-
-
-
+      background: linear-gradient(180deg, #f8fafc, #eef2f7);
       position: relative;
-      border-bottom: 1px solid rgba(34,34,34,0.06);
+      border-bottom: 1px solid rgba(17,24,39,0.06);
       overflow: hidden;
     }
 
@@ -203,8 +297,8 @@
       position: absolute;
       inset: 18px;
       border-radius: 16px;
-      background: rgba(255,255,255,0.52);
-      border: 1px solid rgba(34,34,34,0.06);
+      background: rgba(255,255,255,0.96);
+      border: 1px solid rgba(17,24,39,0.06);
       overflow: hidden;
     }
 
@@ -222,68 +316,132 @@
       padding: 14px;
     }
 
-@@ -273,7 +301,7 @@
+    .screen-top {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 10px;
     }
 
     .pill, .line, .tile {
-      background: rgba(60, 56, 50, 0.08);
+      background: rgba(17, 24, 39, 0.07);
       border-radius: 10px;
     }
 
-@@ -295,10 +323,10 @@
+    .pill { height: 26px; }
+    .line { height: 10px; margin-bottom: 8px; }
+    .tile { height: 58px; }
+
+    .project-body {
+      padding: 22px;
+    }
+
+    .tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 14px 0 18px;
+    }
+
     .tag {
       padding: 7px 10px;
       border-radius: 999px;
       font-size: 0.82rem;
-      color: var(--text);
-      background: #ece6db;
-      border: 1px solid rgba(34,34,34,0.06);
+      color: #3b4252;
+      background: #f2f4f7;
+      border: 1px solid rgba(17,24,39,0.06);
     }
 
     .project-links {
-@@ -315,7 +343,7 @@
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .project-links a {
+      font-size: 0.92rem;
+      color: var(--muted);
+      border-bottom: 1px solid transparent;
+      transition: color 0.18s ease, border-color 0.18s ease;
+    }
 
     .project-links a:hover {
       color: var(--text);
-      border-color: rgba(34,34,34,0.25);
+      border-color: rgba(17,24,39,0.25);
     }
 
     .about-grid,
-@@ -337,13 +365,14 @@
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .panel h3,
+    .contact-card h3 { margin-bottom: 10px; }
+
+    .skill-list {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
     .skill-list span {
       padding: 10px 12px;
       border-radius: 12px;
-      background: #ece6db;
-      border: 1px solid rgba(34,34,34,0.06);
+      background: #f2f4f7;
+      border: 1px solid rgba(17,24,39,0.06);
       color: var(--text);
     }
 
     .contact-card {
       padding: 24px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.46), rgba(255,255,255,0.22));
+      background: linear-gradient(180deg, rgba(255,255,255,0.99), rgba(255,255,255,0.95));
     }
 
     .contact-links {
-@@ -355,15 +384,15 @@
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
     .contact-links a {
       padding: 14px 16px;
       border-radius: 14px;
-      background: #f2ede5;
-      border: 1px solid rgba(34,34,34,0.06);
+      background: #f4f6f8;
+      border: 1px solid rgba(17,24,39,0.06);
       color: var(--text);
+      transition: opacity 0.18s ease, transform 0.18s ease;
     }
 
-    .contact-links a:hover { opacity: 0.85; }
+    .contact-links a:hover {
+      opacity: 0.88;
+      transform: translateY(-1px);
+    }
 
     footer {
       padding: 34px 0 48px;
       color: var(--muted);
       text-align: center;
       font-size: 0.92rem;
-@@ -384,7 +413,11 @@
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .projects,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero { padding-top: 42px; }
+      .hero-card, .panel, .contact-card { padding: 20px; }
       .metrics { grid-template-columns: 1fr; }
       .nav-inner { align-items: flex-start; }
       .nav-links { font-size: 0.9rem; }
+
       h1 {
         max-width: none;
         font-size: clamp(2.4rem, 11vw, 3.4rem);
@@ -292,7 +450,77 @@
     }
   </style>
 </head>
-@@ -462,26 +495,15 @@ <h3>Что увидит работодатель</h3>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="#top" class="brand">Джафарова Олеся · Dashboard Portfolio</a>
+      <div class="nav-links">
+        <a href="#projects">Проекты</a>
+        <a href="#about">Обо мне</a>
+        <a href="#contact">Контакты</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-card">
+          <div class="eyebrow">BI Analyst / Dashboard Developer</div>
+          <h1>Портфолио BI-дашбордов и аналитических отчётов</h1>
+          <p class="lead">
+            Проектирую и развиваю BI-отчёты для операционного, строительного и коммерческого контуров: контроль трудозатрат, бенчмаркинг, стройконтроль, дебиторская задолженность и мониторинг занятости сотрудников.
+            Работала с Tableau, Superset и Visiology, включая миграцию отчётов между BI-платформами.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">Смотреть проекты</a>
+            <a class="btn btn-secondary" href="#contact">Связаться со мной</a>
+          </div>
+
+          <div class="metrics">
+            <div class="metric">
+              <strong>7+</strong>
+              <span>кейсов в портфолио</span>
+            </div>
+            <div class="metric">
+              <strong>Tableau / Visiology</strong>
+              <span>основной стек</span>
+            </div>
+            <div class="metric">
+              <strong>BI Migration</strong>
+              <span>опыт переноса отчётов</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="panel">
+          <div>
+            <h3>Что увидит работодатель</h3>
+            <p style="color: var(--muted);">
+              В портфолио — реальные корпоративные кейсы: отчёты для строительных процессов, контроля дефектов, бенчмаркинга закупок, дебиторской задолженности и занятости сотрудников.
+            </p>
+          </div>
+          <div class="mini-chart" aria-hidden="true">
+            <div class="bars">
+              <div class="bar" style="height: 42%;"></div>
+              <div class="bar" style="height: 58%;"></div>
+              <div class="bar" style="height: 74%;"></div>
+              <div class="bar" style="height: 64%;"></div>
+              <div class="bar" style="height: 88%;"></div>
+              <div class="bar" style="height: 100%;"></div>
+            </div>
+          </div>
+          <div>
+            <strong>Формат:</strong>
+            <span style="color: var(--muted);"> страница-витрина с кейсами, ссылками на GitHub и контактами.</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
         <div class="section-head">
           <div>
             <h2>Избранные проекты</h2>
@@ -305,21 +533,24 @@
             <div class="project-cover">
               <div class="screen">
                 <img src="images/real-estate-transfer-dynamics.png" alt="Скриншот дашборда Динамика передачи объектов недвижимости">
-
-
-
-
-
-
-
-
-
-
-
               </div>
             </div>
             <div class="project-body">
-@@ -503,6 +525,58 @@ <h3>Динамика передачи объектов недвижимости<
+              <h3>Динамика передачи объектов недвижимости</h3>
+              <p>
+                Дашборд для мониторинга ключевых дат строительства: ОВП, АПП, старт заселения, ДДУ и анализа взаимосвязей между этапами.
+              </p>
+              <div class="tags">
+                <span class="tag">Tableau</span>
+                <span class="tag">Construction</span>
+                <span class="tag">Deadlines</span>
+              </div>
+              <p style="color: var(--muted);">
+                Использовался для управленческого контроля сроков и анализа средних показателей просрочки по этапам строительства.
+              </p>
+              <div class="project-links">
+                <a href="https://github.com/sheolesya" target="_blank" rel="noreferrer">GitHub</a>
+                <a href="#contact">Запросить детали</a>
               </div>
             </div>
           </article>
@@ -378,63 +609,165 @@
         </div>
       </div>
     </section>
-@@ -540,12 +614,21 @@ <h3>Стек и навыки</h3>
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="panel">
+          <div>
+            <h2>Обо мне</h2>
+            <p style="color: var(--muted);">
+              Я BI-аналитик, который разрабатывает отчёты и дашборды для мониторинга процессов, операционного контроля и поддержки управленческих решений.
+              Работала с корпоративными кейсами в строительном и операционном направлении, строила отчёты в Tableau и Superset, а также участвовала в миграции решений в Visiology.
+            </p>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>Стек и навыки</h3>
+          <div class="skill-list">
+            <span>Tableau</span>
+            <span>Visiology</span>
+            <span>Superset</span>
+            <span>SQL</span>
+            <span>ClickHouse</span>
+            <span>BI Migration</span>
+            <span>Data Visualization</span>
+            <span>Construction Analytics</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
         <div class="section-head">
           <div>
             <h2>Другие проекты</h2>
             <p>Дополнительные кейсы из портфолио, которые можно развернуть в отдельные карточки или на второй экран сайта.</p>
           </div>
         </div>
+
         <div class="projects">
           <article class="project-card">
             <div class="project-cover">
               <div class="screen">
                 <div class="screen-placeholder">
-                  <div class="screen-top"><div class="pill"></div><div class="pill"></div><div class="pill"></div></div>
+                  <div class="screen-top">
+                    <div class="pill"></div>
+                    <div class="pill"></div>
+                    <div class="pill"></div>
+                  </div>
                   <div class="line" style="width:82%;"></div>
                   <div class="line" style="width:55%;"></div>
-                  <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top: 12px;"><div class="tile"></div><div class="tile"></div></div>
+                  <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top: 12px;">
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                  </div>
                 </div>
               </div>
             </div>
             <div class="project-body">
               <h3>Занятость ТН</h3>
               <p>Календарь занятости сотрудников технадзора, контроль присутствия на площадках и анализ KPI для оперативного выявления отклонений.</p>
-@@ -555,7 +638,16 @@ <h3>Занятость ТН</h3>
+              <div class="tags">
+                <span class="tag">Tableau</span>
+                <span class="tag">Visiology</span>
+                <span class="tag">KPI Monitoring</span>
+              </div>
+              <p style="color: var(--muted);">Помогал выявлять перекосы в загрузке, отсутствие сотрудников на объектах и поддерживать качество работ подрядчиков.</p>
+            </div>
           </article>
 
           <article class="project-card">
             <div class="project-cover">
               <div class="screen">
                 <div class="screen-placeholder">
-                  <div class="screen-top"><div class="pill"></div><div class="pill"></div><div class="pill"></div></div>
+                  <div class="screen-top">
+                    <div class="pill"></div>
+                    <div class="pill"></div>
+                    <div class="pill"></div>
+                  </div>
                   <div class="line" style="width:74%;"></div>
                   <div class="line" style="width:47%;"></div>
-                  <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; margin-top: 12px;"><div class="tile"></div><div class="tile"></div><div class="tile"></div></div>
+                  <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; margin-top: 12px;">
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                  </div>
                 </div>
               </div>
             </div>
             <div class="project-body">
               <h3>Стройконтроль</h3>
               <p>Мониторинг критических и значительных дефектов, просрочек, дисциплины сотрудников и динамики устранения дефектов по проектам.</p>
-@@ -565,7 +657,16 @@ <h3>Стройконтроль</h3>
+              <div class="tags">
+                <span class="tag">Tableau</span>
+                <span class="tag">Visiology</span>
+                <span class="tag">Quality Control</span>
+              </div>
+              <p style="color: var(--muted);">Давал детальную аналитику по дефектам и помогал контролировать работу подрядчиков и команд.</p>
+            </div>
           </article>
 
           <article class="project-card">
             <div class="project-cover">
               <div class="screen">
                 <div class="screen-placeholder">
-                  <div class="screen-top"><div class="pill"></div><div class="pill"></div><div class="pill"></div></div>
+                  <div class="screen-top">
+                    <div class="pill"></div>
+                    <div class="pill"></div>
+                    <div class="pill"></div>
+                  </div>
                   <div class="line" style="width:70%;"></div>
                   <div class="line" style="width:43%;"></div>
-                  <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top: 12px;"><div class="tile"></div><div class="tile"></div></div>
+                  <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top: 12px;">
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                  </div>
                 </div>
               </div>
             </div>
             <div class="project-body">
               <h3>Дебиторская задолженность и карты</h3>
               <p>Отчёты по динамике ДЗ в разрезе договоров, статусов и периодов, а также проекты с клиентскими и интерактивными картами.</p>
-@@ -606,7 +707,7 @@ <h3>Как использовать эту страницу</h3>
+              <div class="tags">
+                <span class="tag">Visiology</span>
+                <span class="tag">AR Analytics</span>
+                <span class="tag">Maps</span>
+              </div>
+              <p style="color: var(--muted);">Использовались для контроля изменения ДЗ помесячно и визуального анализа клиентской и географической информации.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-card">
+          <h2>Контакты</h2>
+          <p style="color: var(--muted);">
+            Открыта к предложениям о проектной работе, аналитических задачах и BI-позициях.
+          </p>
+          <div class="contact-links">
+            <a href="mailto:yourmail@example.com">yourmail@example.com</a>
+            <a href="https://github.com/sheolesya" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Telegram</a>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <h3>Как использовать эту страницу</h3>
+          <p style="color: var(--muted);">
+            1. Добавь реальные скриншоты отчётов.<br>
+            2. Замени заглушки почты, LinkedIn и Telegram на свои ссылки.<br>
+            3. Сохрани страницу как <strong>index.html</strong> и опубликуй через GitHub Pages.<br>
+            4. Используй ссылку на сайт в резюме и откликах.
+          </p>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
